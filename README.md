@@ -1,5 +1,5 @@
 # envl
-A simple environment variable loader that reads .env files.
+A simple environment variable loader library that reads .env files into [ENV](https://docs.ruby-lang.org/en/master/ENV.html).
 
 # installation
 ```

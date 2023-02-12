@@ -1,0 +1,2 @@
+# envl
+A dotenv alternative.

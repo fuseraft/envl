@@ -3,7 +3,7 @@
 class Envl
     # automatically finds all .env files and loads them into ENV.
     def self.auto_load
-        files = Dir.glob('*.env', File::FNM_CASEFOLD)
+        files = Dir.glob('*.env*', File::FNM_CASEFOLD)
         self.load(files)
     end
 

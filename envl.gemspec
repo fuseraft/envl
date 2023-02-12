@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
     s.name        = "envl"
-    s.version     = "0.0.1"
+    s.version     = "0.0.3"
     s.summary     = "A simple environment variable loader."
     s.description = "A simple environment variable loader that reads .env files."
     s.authors     = ["Scott Stauffer"]
@@ -10,4 +10,5 @@ Gem::Specification.new do |s|
     s.homepage    =
       "https://rubygems.org/gems/envl"
     s.license       = "MIT"
+    s.required_ruby_version = '>= 2.7.0'
   end

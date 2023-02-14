@@ -8,7 +8,7 @@ You can find the gem here: [Envl](https://rubygems.org/gems/envl)
 gem install envl
 ```
 
-# Usage
+# Basic usage
 Add a `require` to your `.rb` file.
 ```ruby
 require 'envl'

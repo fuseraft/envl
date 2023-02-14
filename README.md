@@ -11,7 +11,5 @@ gem install envl
 require 'envl'
 
 Envl.auto_load
-Envl.get_loaded_vars.each do |v|
-    puts "#{v}: #{ENV[v]}"
-end
+Envl.get_loaded_vars.each {|v| puts "#{v}: #{ENV[v]}"}
 ```

@@ -9,12 +9,14 @@ gem install envl
 ```
 
 # Basic usage
-Add a `require` to your `.rb` file.
+Add a `require` to your `.rb` file and call `Envl#auto_load`.
 ```ruby
 require 'envl'
 
 # Automatically load .env file in current directory into ENV
 Envl.auto_load
+# Now we have a happy ENV!
+Envl.keys.each {|v| puts "#{v}: #{ENV[v]}"}
 ```
 
 # Methods

@@ -18,11 +18,14 @@ Envl.auto_load
 ```
 
 # Methods
-
 `Envl#auto_load`: Finds and loads `.env` files in the current directory into `ENV`.
+
 `Envl#keys`: Returns all keys loaded into `ENV` via `Envl`.
+
 `Envl#load`: Loads an array of `.env` files into `ENV`.
+
 `Envl#load_path`: Finds and loads `.env` files in a specific directory into `ENV`.
+
 `Envl#load_single`: Loads a single `.env` file into `ENV`.
 
 # More examples

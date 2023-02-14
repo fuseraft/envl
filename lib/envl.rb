@@ -3,29 +3,36 @@
 class Envl
     @@loaded_vars = []
 
-    # automatically finds all .env files and loads them into ENV.
+    # Automatically finds all .env files and loads them into ENV.
     def self.auto_load
         files = ['*.env', '*.env.*'].map { |s| Dir.glob(s, File::FNM_CASEFOLD) }.flatten.uniq
         self.load(files)
     end
 
-    # finds and loads all .env files in a specific directory into ENV.
+    # Returns true if a given file is a .env file.
+    def self.is_env?(file)
+        ext = File.extname(file).downcase
+        name = File.basename(file).downcase
+        ext.include? '.env' or name[name.index('.')..].include? '.env'
+    end
+
+    # Returns all keys loaded into ENV.
+    def self.keys
+        @@loaded_vars
+    end
+
+    # Finds and loads all .env files in a specific directory into ENV.
     def self.load_path(path)
-        files = [File.join(path, "*.env"), File.join(path, "*.env.*")].map { |s| Dir.glob(s, File::FNM_CASEFOLD) }.flatten.uniq
+        files = [File.join(path, '*.env'), File.join(path, '*.env.*')].map { |s| Dir.glob(s, File::FNM_CASEFOLD) }.flatten.uniq
         self.load(files)
     end
 
-    # loads a single .env file into ENV.
+    # Loads a single .env file into ENV.
     def self.load_single(path)
         self.load([path])
     end
 
-    # returns all loaded variables.
-    def self.get_loaded_vars
-        @@loaded_vars
-    end
-
-    # accepts an array of .env files and load thems into ENV.
+    # Accepts an array of .env files and load thems into ENV.
     def self.load(files)
         files.each do |f|
             self.load_env(f)
@@ -33,14 +40,7 @@ class Envl
         ENV
     end
 
-    # sanity-check
-    def self.is_env?(file)
-        ext = File.extname(file).downcase
-        name = File.basename(file).downcase
-        ext.include? '.env' or name[name.index('.')..].include? '.env'
-    end
-
-    # loads a single .env file into ENV. 
+    # Loads a single .env file into ENV. 
     def self.load_env(file)
         begin
             return if not self.is_env?(file)

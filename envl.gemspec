@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
     s.name        = "envl"
-    s.version     = "0.0.7"
+    s.version     = "0.0.8"
     s.summary     = "A simple environment variable loader."
     s.description = "A simple environment variable loader that reads .env files into ENV."
     s.authors     = ["Scott Stauffer"]

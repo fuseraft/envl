@@ -8,21 +8,26 @@ You can find the gem here: [Envl](https://rubygems.org/gems/envl)
 gem install envl
 ```
 
-# Usage
-Add a `require` to your `.rb` file.
+# Basic usage
+Add a `require` to your `.rb` file and call `Envl#auto_load`.
 ```ruby
 require 'envl'
 
 # Automatically load .env file in current directory into ENV
 Envl.auto_load
+# Now we have a happy ENV!
+Envl.keys.each {|v| puts "#{v}: #{ENV[v]}"}
 ```
 
 # Methods
-
 `Envl#auto_load`: Finds and loads `.env` files in the current directory into `ENV`.
+
 `Envl#keys`: Returns all keys loaded into `ENV` via `Envl`.
+
 `Envl#load`: Loads an array of `.env` files into `ENV`.
+
 `Envl#load_path`: Finds and loads `.env` files in a specific directory into `ENV`.
+
 `Envl#load_single`: Loads a single `.env` file into `ENV`.
 
 # More examples
